@@ -1,11 +1,14 @@
-<p></p>
-<input type="text" [(ngModel)]="valor1">
-<p></p>
-<input type="text" [(ngModel)]="valor2">
-<p></p>
-<input type="text" [(ngModel)]="resultado" disabled>
-<p></p>
-<button class="btn btn-primary btn-lg" (click)="Sumar()">Sumar</button>
-<p></p>
-<button class="btn btn-primary btn-lg" (click)="Restar()">Restar</button>
-<p></p>
+<div class="container text-center mt-5">
+
+    <input type="text" [(ngModel)]="valor1" placeholder="Ingrese el Primer valor" style="width: 100%;">
+    <p></p>
+    <input type="text" [(ngModel)]="valor2" placeholder="Ingrese el Segundo valor">
+    <p></p>
+    <input type="text" [(ngModel)]="resultado" disabled>
+    <p></p>
+    <button class="btn btn-primary btn-lg" (click)="Sumar()">Sumar</button>
+    <p></p>
+    <button class="btn btn-primary btn-lg" (click)="Restar()">Restar</button>
+    <p></p>
+    
+</div>
