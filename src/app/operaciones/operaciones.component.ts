@@ -89,21 +89,21 @@ export class OperacionesComponent implements OnInit {
     var remainder = 0;
     var respuesta = new Array();
 
-      for (let index = num1_idx; index >= 0; index--)
-      {
-          if(index-num2_idx>= 0)
+    var index1 = num1_idx;
+      do {
+        if(index1-num2_idx>= 0)
           {
 
-              var sumaRemainder = Number(num2[index-num2_idx]) + remainder;
-              if(num1[index] >= sumaRemainder)
+              var sumaRemainder = Number(num2[index1-num2_idx]) + remainder;
+              if(num1[index1] >= sumaRemainder)
               {
-                  var res = num1[index] - sumaRemainder;
+                  var res = num1[index1] - sumaRemainder;
                   respuesta.push(res);
                   remainder = 0;
               }
               else
               {
-                  var suma = Number(num1[index]) + 10;
+                  var suma = Number(num1[index1]) + 10;
                   var res = suma - sumaRemainder;
                   respuesta.push(res);
                   remainder = 1;
@@ -113,15 +113,15 @@ export class OperacionesComponent implements OnInit {
           {
               if(remainder > 0)
               {
-                  if(Number(num1[index])>=remainder)
+                  if(Number(num1[index1])>=remainder)
                   {
-                      var res = num1[index] - remainder;
+                      var res = num1[index1] - remainder;
                       respuesta.push(res);
                       remainder = 0;
                   }
                   else
                   {
-                      var suma = Number(num1[index]) + 10;
+                      var suma = Number(num1[index1]) + 10;
                       var res = suma - remainder;
                       respuesta.push(res);
                       remainder = 1;
@@ -129,18 +129,21 @@ export class OperacionesComponent implements OnInit {
               }
               else
               {
-                  var res = num1[index] - remainder;
+                  var res = num1[index1] - remainder;
                       respuesta.push(res);
                       remainder = 0;
               }
           }
+          index1--;
+      } while (index1 >= 0);
 
-      }
-      var respuestaOrdenada = "";
-      for (let index = respuesta.length-1; index >=0; index--)
-      {
-          respuestaOrdenada += respuesta[index];
-      }
+     var respuestaOrdenada = "";
+      var index2 = respuesta.length-1;
+      do {
+        respuestaOrdenada += respuesta[index2];
+        index2--;
+      } while (index2 >=0);
+
       return respuestaOrdenada;
   }
 }
