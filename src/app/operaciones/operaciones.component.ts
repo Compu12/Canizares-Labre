@@ -21,8 +21,8 @@ export class OperacionesComponent implements OnInit {
     this.resultado =  this.sumarInterno(this.valor1, this.valor2)
   }
 
-   sumarInterno(num1:any, num2:any) {
-      num1 = num1.split('');
+  sumarInterno(num1:any, num2:any) {
+    num1 = num1.split('');
     num2 = num2.split('');
 
     num1 = num1.map(function (num:any) {
@@ -41,11 +41,11 @@ export class OperacionesComponent implements OnInit {
   }
 
   sumarOrdenado(num1:any, num2:any) {
-      var num1_idx = num1.length-1;
+    var num1_idx = num1.length-1;
     var num2_idx = num2.length-1;
     var remainder = 0;
 
-    for (; num1_idx > -1; num1_idx--, num2_idx--) {
+    do {
       var sum = num1[num1_idx] + remainder;
 
       if (num2_idx > -1) {
@@ -59,8 +59,9 @@ export class OperacionesComponent implements OnInit {
           remainder = 1;
         num1[num1_idx] = sum - 10;
       }
-
-    }
+      num1_idx--;
+      num2_idx--;
+    } while (num1_idx > -1);
 
     return num1.join('').replace(/^[0]+/g,"");
   }
