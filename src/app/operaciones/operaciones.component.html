@@ -1,14 +1,18 @@
-<div class="container text-center mt-5">
-
-    <input type="text" [(ngModel)]="valor1" placeholder="Ingrese el Primer valor" style="width: 100%;">
+<div class="mt-5">
+    <h1 class="text-center">Xavier Cañizares - Juan Carlos Labre</h1>
+    <br>
+    <br>
+    <h3 class="text-center">Valor 1</h3>
+    <input type="text" [(ngModel)]="valor1" style="width: 100%; text-align: right;" class="form-control">
     <p></p>
-    <input type="text" [(ngModel)]="valor2" placeholder="Ingrese el Segundo valor">
+    <h3 class="text-center">Valor 2</h3>
+    <input type="text" [(ngModel)]="valor2"  style="width: 100%;text-align: right;" class="form-control">
     <p></p>
-    <input type="text" [(ngModel)]="resultado" disabled>
+    <h3 class="text-center">Resultado</h3>
+    <input type="text" [(ngModel)]="resultado" disabled style="width: 100%;text-align: right;" class="form-control">
     <p></p>
-    <button class="btn btn-primary btn-lg" (click)="Sumar()">Sumar</button>
-    <p></p>
-    <button class="btn btn-primary btn-lg" (click)="Restar()">Restar</button>
-    <p></p>
-    
+    <div class="container text-center mt-5">
+      <button class="btn btn-info btn-lg me-3" (click)="Sumar()" style="width: 40%;">Sumar</button>
+      <button class="btn btn-dark btn-lg" (click)="Restar()" style="width: 40%;">Restar</button>
+    </div>
 </div>
