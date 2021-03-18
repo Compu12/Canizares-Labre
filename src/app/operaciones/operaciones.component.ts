@@ -16,6 +16,13 @@ export class OperacionesComponent implements OnInit {
   valor2?:string;
   resultado?:string;
 
+  Limpiar()
+  {
+    this.valor1 = '';
+    this.valor2 = '';
+    this.resultado = '';
+  }
+
   Sumar()
   {
     this.resultado =  this.sumarInterno(this.valor1, this.valor2)
