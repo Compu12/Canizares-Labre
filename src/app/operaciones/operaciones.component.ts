@@ -15,6 +15,8 @@ export class OperacionesComponent implements OnInit {
   valor1?:string;
   valor2?:string;
   resultado?:string;
+  sizevalor1?:number;
+  sizevalor2?:number;
 
   Limpiar()
   {
@@ -25,7 +27,9 @@ export class OperacionesComponent implements OnInit {
 
   Sumar()
   {
-    this.resultado =  this.sumarInterno(this.valor1, this.valor2)
+    this.resultado =  this.sumarInterno(this.valor1, this.valor2);
+    this.sizevalor1 = this.valor1.length;
+    this.sizevalor2 = this.valor2.length;
   }
 
   sumarInterno(num1:any, num2:any) {
@@ -74,7 +78,9 @@ export class OperacionesComponent implements OnInit {
   }
 
   Restar(){
-    this.resultado = this.restarInterno(this.valor1, this.valor2)
+    this.resultado = this.restarInterno(this.valor1, this.valor2);
+    this.sizevalor1 = this.valor1.length;
+    this.sizevalor2 = this.valor2.length;
   }
 
   restarInterno(num1:string, num2:string):string
@@ -83,11 +89,10 @@ export class OperacionesComponent implements OnInit {
       {
           return "0";
       }
-      else if (Number(num1) > Number(num2)) {
+      else
+      {
       return this.restarOrdenado(num1, num2);
-    } else {
-      return this.restarOrdenado(num2, num1)
-    }
+      }
   }
 
   restarOrdenado(num1:any, num2:any):string
